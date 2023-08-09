@@ -6,7 +6,7 @@ Utils::Utils()
 
 wchar_t* Utils::getText(const locale loc)
 {
-  wifstream txt("input.data", ios::binary);
+  wifstream txt("dataset/input.data", ios::binary);
 
   if(!txt.is_open())
   {
