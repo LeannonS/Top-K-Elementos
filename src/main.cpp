@@ -16,23 +16,31 @@ int main()
   Utils u;
   vector<Item> minHeap;
   unordered_map <wstring, int> frequenceMap;
+  unordered_set<wstring> stopwords = u.getStopWords(loc);
   wchar_t* txt = u.getText(loc), *ch = txt;
   wstring word;
-
+  
   while(*ch)
   {
     switch(*ch)
     {
-      case L' ': case L'!': case L'?': case L'.': case L'\n': case L',': case L'(': case L')': case L';': case L'/': case L':': 
+      case L' ': case L'!': case L'?': case L'.': case L'\n': case L',': case L'(': case L')': case L';': case L'/': case L':': case L'—': case L'"': case L'\'':
         if(!word.empty())
         {
           transform(word.begin(), word.end(), word.begin(), ::tolower);
-          frequenceMap[word]++;
+          if(stopwords.find(word) == stopwords.end())
+          {
+            frequenceMap[word]++;
+          }
+          word.clear();
         }
-        word.clear();
         break;
 
       default:
+        if(*ch == '-' && word.size() == 0)
+        {
+          break;
+        }
         word += *ch;
         break;
     }
