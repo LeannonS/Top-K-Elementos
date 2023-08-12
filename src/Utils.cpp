@@ -36,6 +36,33 @@ wchar_t* Utils::getText(const locale loc)
   return buffer;
 }
 
+unordered_set<wstring> Utils::getStopWords(const locale loc)
+{
+  wstring word;
+  unordered_set<wstring> stopwords;
+  
+  wifstream file("dataset/stopwords.txt");
+
+  if(!file.is_open())
+  {
+    cerr << "Não foi possível abrir o arquivo!" << endl;
+    exit(1);
+  }
+
+  // Aplica a localização configurada ao fluxo do arquivo
+  file.imbue(loc);
+
+  while (file >> word)
+  {
+    stopwords.insert(word);
+  }
+
+  file.close();
+
+  return stopwords;
+  
+}
+
 void Utils::printHeap(vector<Item> heap)
 {
   for (int i = heap.size()-1; i >= 0; i--)
