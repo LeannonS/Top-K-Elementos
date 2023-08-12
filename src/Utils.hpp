@@ -12,6 +12,7 @@ class Utils
     Utils();
 
     wchar_t* getText(const locale loc);
+    unordered_set<wstring> getStopWords(const locale loc);
     void printHeap(vector<Item> heap);
 };
 
