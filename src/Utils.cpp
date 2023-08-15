@@ -4,13 +4,13 @@ Utils::Utils()
 {
 }
 
-wchar_t* Utils::getText(const locale loc)
+wchar_t* Utils::getText(const locale loc, string name)
 {
-  wifstream txt("dataset/input.data", ios::binary);
+  wifstream txt(name, ios::binary);
 
   if(!txt.is_open())
   {
-    cerr << "Não foi possível abrir o arquivo!" << endl;
+    cerr << "Não foi possível abrir o arquivo " << name << endl;
     exit(1);
   }
 
@@ -65,7 +65,7 @@ unordered_set<wstring> Utils::getStopWords(const locale loc)
 
 void Utils::printHeap(vector<Item> heap)
 {
-  for (int i = heap.size()-1; i >= 0; i--)
+  for (int i = 0; i < heap.size(); i++)
   {
      wcout << "Palavra: " << heap[i].getNome() << " --- " << "Frequência: "<< heap[i].getFrequencia() << endl;
   }
