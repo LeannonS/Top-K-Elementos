@@ -5,9 +5,7 @@
 using namespace std;
 
 int main()
-{
-  auto start = chrono::high_resolution_clock::now();
-  
+{ 
   setlocale(LC_ALL, "pt_BR.UTF-8");
   // Cria um objeto de localização com conversão UTF-8 para wide characters
   locale loc(locale(), new codecvt_utf8<wchar_t>);
@@ -17,34 +15,46 @@ int main()
   vector<Item> minHeap;
   unordered_map <wstring, int> frequenceMap;
   unordered_set<wstring> stopwords = u.getStopWords(loc);
-  wchar_t* txt = u.getText(loc), *ch = txt;
   wstring word;
-  
-  while(*ch)
-  {
-    switch(*ch)
-    {
-      case L' ': case L'!': case L'?': case L'.': case L'\n': case L',': case L'(': case L')': case L';': case L'/': case L':': case L'—': case L'"': case L'\'':
-        if(!word.empty())
-        {
-          transform(word.begin(), word.end(), word.begin(), ::tolower);
-          if(stopwords.find(word) == stopwords.end())
-          {
-            frequenceMap[word]++;
-          }
-          word.clear();
-        }
-        break;
+  int numFiles;
 
-      default:
-        if(*ch == '-' && word.size() == 0)
-        {
+  cout << "(Todos os arquivos devem ser nomeados como input1.data, input2.data...)" << endl;
+  cout << "Insira o número de arquivos a serem lidos: ";
+  cin >> numFiles;
+
+  auto start = chrono::high_resolution_clock::now();
+
+  for(int i = 1; i <= numFiles; i++)
+  {
+    string name = "./dataset/input" + to_string(i) + ".data";
+    wchar_t* txt = u.getText(loc, name), *ch = txt;
+    while(*ch)
+    {
+      switch(*ch)
+      {
+        case L' ': case L'!': case L'?': case L'.': case L'\n': case L',': case L'(': case L')': case L';': case L'/': case L':': case L'—': case L'"': case L'\'':
+          if(!word.empty())
+          {
+            transform(word.begin(), word.end(), word.begin(), ::tolower);
+            if(stopwords.find(word) == stopwords.end())
+            {
+              frequenceMap[word]++;
+            }
+            word.clear();
+          }
           break;
-        }
-        word += *ch;
-        break;
+  
+        default:
+          if(*ch == '-' && word.size() == 0)
+          {
+            break;
+          }
+          word += *ch;
+          break;
+      }
+      ch++;
     }
-    ch++;
+    delete[] txt;
   }
 
   for (const auto& aux: frequenceMap)
@@ -69,14 +79,11 @@ int main()
     }
   }
 
-  sort(minHeap.begin(), minHeap.end());
   u.printHeap(minHeap);
 
   auto stop = chrono::high_resolution_clock::now();
   auto duration = chrono::duration_cast<chrono::milliseconds>(stop - start);
   wcout << endl << duration.count() << " ms" << endl;
-
-  delete[] txt;
 
   return 0;
 }
