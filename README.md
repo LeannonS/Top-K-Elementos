@@ -118,6 +118,10 @@ Foi decidido fazer tal implementação utilizando uma hash e um heap devido a co
 
 Este trecho de código em C++ representa o arquivo "main.cpp". A função main() é responsável por iniciar o programa, processar os arquivos de entrada, contar a frequência das palavras, selecionar as palavras mais frequentes usando um heap mínimo e imprimir os resultados, bem como calcular o tempo de execução.
 
+### Utils.hpp e Utils.cpp
+
+
+
 ## Exemplos de entrada e saída
 
 ## Conclusão
