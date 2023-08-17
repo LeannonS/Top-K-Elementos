@@ -36,8 +36,9 @@ O desenvolvimento do algoritmo envolve:
 
 4- Impressão dos Resultados:
 
-* Ao final do processo, a heap conterá os k elementos com maiores valores (frequências) da coleção de dados. Os elementos na heap são impressos em ordem crescente.
+* Ao final do processo, a heap conterá os k elementos com maiores valores (frequências) da coleção de dados.
 
+Deve-se ressaltar que o valor k mencionado para a construção do heap, está predefinido como 20, garantindo assim que seja criada uma hash com apenas 20 elementos.
 
 ## Decisões de implementação
 
