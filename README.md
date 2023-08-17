@@ -69,7 +69,7 @@ A ausência de certos caracteres especiais foi um dos grandes motivos para utili
 
 porque foi usado uma hash junto de um heap?
 
-##Funções do C++ utilizadas
+## Funções do C++ utilizadas
 
 ## Arquivos
 
