@@ -104,7 +104,15 @@ Foi decidido fazer tal implementação utilizando uma hash e um heap devido a co
 
 ## Funções do C++ utilizadas
 
+```unordered_map```</p>
 
+```unordered_set```</p>
+
+```make_heap```</p>
+
+```push_heap```</p>
+
+```pop_heap```</p>
 
 ## Arquivos
 
