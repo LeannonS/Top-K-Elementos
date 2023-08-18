@@ -122,6 +122,24 @@ Este trecho de código em C++ representa o arquivo "main.cpp". A função main()
 
 ### Item.hpp e Item.cpp
 
+O arquivo Item.hpp contém o cabeçalho que define a classe Item(Considere a classe Item como os dados da palavra). Nele, estão os atributos relacionados ao nome e à frequência de cada palavra, bem como os métodos para acessar e modificar esses atributos. Essa classe permite representar e gerenciar as informações de cada item, como seu nome e com que frequência ele aparece na coleção de dados. Aqui está uma explicação das principais utilidades e funcionalidades da classe Utils:
+
+* ```Item(wstring nome, int frequencia)``` Construtor da classe Item que aceita dois parâmetros: o nome da palavra (uma string ampla) e a sua frequencia (um número inteiro). Ele é usado para criar um novo objeto Item com os valores fornecidos.
+
+* ```Item()``` Construtor padrão da classe Item. Ele cria um objeto Item com valores padrão para o nome e a frequencia.
+
+* ```void setNome(wstring nome)``` Função que define o nome do item. Ela aceita uma string ampla nome como parâmetro e atribui esse valor ao atributo privado nome da classe.
+
+* ```wstring getNome()``` Função que obtém o nome do item. Ela retorna a string ampla que representa o nome do item.
+
+* ```void setFrequencia(int frequencia)``` Função que define a frequencia do item. Ela aceita um número inteiro frequencia como parâmetro e atribui esse valor ao atributo privado frequencia da classe.
+
+* ```int getFrequencia()``` Função que obtém a frequencia do item. Ela retorna o valor inteiro que representa a frequência do item.
+
+* ```bool operator<(const Item& other) const``` Sobrecarga do operador de comparação <. Essa função permite comparar dois objetos Item para determinar qual deles é "menor" com base em algum critério de comparação (neste caso, a frequência do item). Ela retorna true se o item atual for considerado "menor" do que o outro item passado como parâmetro.
+
+Essas funções permitem criar e manipular objetos da classe Item, definindo seus atributos e realizando comparações entre eles. Através de funções de "get" e "set", os valores dos atributos podem ser acessados e modificados de maneira controlada.
+
 ### Utils.hpp e Utils.cpp
 
 A classe Utils em "Utils.hpp" e "Utils.cpp" desempenha um papel fundamental ao oferecer funcionalidades auxiliares para facilitar operações comuns e complexas no programa. Esta classe foi projetada para encapsular diversas funções que não estão diretamente relacionadas à lógica principal da ordenação, mas que são essenciais para o funcionamento do programa como um todo.
