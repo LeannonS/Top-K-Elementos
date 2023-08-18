@@ -18,6 +18,8 @@ O trabalho mostrado neste repositório tem como objetivo fazer a leitura e anál
 
 * Os arquivos de entrada são "inputN.data" (sendo N um número inteiro crescente iniciando-se apartir de 1) e "stopwords.txt";
 
+* K está definido previamente no código como uma constante de tamanho 20;
+
 ## Desenvolvimento do problema
 
 O desenvolvimento do algoritmo envolve:
