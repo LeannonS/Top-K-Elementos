@@ -136,6 +136,62 @@ A classe Utils é uma forma eficiente de organizar essas funcionalidades auxilia
 
 ## Exemplos de entrada e saída
 
+## Máquina de teste
+
+<table style="width: 100%;" border="1">
+  <tr align="center">
+    <td colspan="2">
+      <div>
+        <br>
+          <p class="sizeText color">Notebook Acer</p>
+        <br>        
+      </div>
+    </td>
+  <tr>
+  <tr align="center">
+    <td>
+      <div>
+        <br>
+          <p class="sizeText color">RAM</p>
+        <br>
+      </div> 
+    </td>
+    <td>
+      <br>
+        <p class="sizeText color">6GB DDR3</p>
+      <br>
+    </td>
+  </tr>
+  <tr align="center">
+    <td style="width: 20%;">
+      <p class="sizeText color">
+        <br>
+          <p class="sizeText color">SO</p>
+        <br>
+      </p>
+    </td>
+    <td >
+      <br>
+        <p class="sizeText color">Windows 10, 64bits</p>
+      <br>
+    </td>
+  </tr>
+  <tr align="center">
+    <td style="width: 20%;">
+      <br>
+        <p class="sizeText color">    
+          CPU
+        </p>
+      <br>
+    </td>
+    <td>
+      <br>
+        <p class="sizeText color">Intel core i5 4° geração 1,70GHz</p>
+      <br>
+    </td>
+  </tr>
+</table>
+
 ## Conclusão
 
 ## Compilação e Execução
