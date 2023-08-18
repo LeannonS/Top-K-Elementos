@@ -174,7 +174,7 @@ Após a execução do programa é mostrado na tela os top k elementos, sendo ele
 
 #Imagem 2
 
-Como podemos observar nos exemplos mostrados acima, vemos que o heap está ordenado na forma de um heap mínimo, onde o nó pai é menor que os seus filhos direito e esquerdo, tendo o filho esquerdo na posição 2i e o filho direito na posição 2i+1, referente ao nó pai.
+Como podemos observar nos exemplos mostrados acima, vemos que o heap está ordenado na forma de um heap mínimo, onde o nó pai é menor que os seus filhos direito e esquerdo, tendo o filho esquerdo na posição 2i e o filho direito na posição 2i+1, referente ao nó pai. Também podemos verificar que as palavras listadas na saída do programa, são as k palavras mais frequentes presentes nos textos.
 
 ## Máquina de teste
 
