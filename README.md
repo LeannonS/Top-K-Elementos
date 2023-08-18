@@ -102,6 +102,8 @@ A ausência de certos caracteres especiais foi um dos grandes motivos para utili
 
 Foi decidido fazer tal implementação utilizando uma hash e um heap devido a complexidade do algoritmo, pois caso implementado adequadamente, o custo deste metódo é de O(n log k), onde n é o tamanho da coleção de dados e k é o número de itens mais relevantes. Por outro lado, caso decidido salvar todas as palavras no map e ordena-lo de acordo com a frequência das palavras para achar os top k elementos, teríamos um custo de O(n log n), sendo este um custo mais significativo para o algoritmo.
 
+Para a impleeentação do heap, foi escolhido uma estrutura de heap mínimo devido a praticidade para encontrar o menor valor do heap caso contrário de um heap máximo, que seria mais trabalhoso para se encontrar o a palavra com menor frequência. Utilizando-se um heap mínimo, podemos a todo momento verificar e fazer a remoção apenas da raiz tornando assim mais eficiente a remoção do elemento.
+
 ## Funções do C++ utilizadas
 
 ```unordered_map```</p>
@@ -163,6 +165,16 @@ Em "Utils.hpp" estão definidos os cabeçalhos dos métodos da classe Utils, enq
 A classe Utils é uma forma eficiente de organizar essas funcionalidades auxiliares, isolando-as do restante do código e promovendo a reutilização de código. Ao reunir essas operações em uma única classe, você está seguindo princípios de modularidade e coesão, tornando o código mais organizado, legível e manutenível. Além disso, a classe ajuda a abstrair detalhes de implementação e proporciona uma interface mais intuitiva para o uso dessas funcionalidades em outras partes do programa.
 
 ## Exemplos de entrada e saída
+
+Ao se compilar e iniciar a execução do programa, o algoritmo fornece uma mensagem na tela perguntando a quantidade de arquivos que o usuário deseja fazer a leitura. Foram realizados dois testes, o primeiro teste foi utilizado lendo apenas o arquivo _input1.data_. O segundo teste foi realizado utilizando dois arquivos sendo eles: _input1.data_ e _input.data_. A seguir segue o exemplo dos 2 arquivos de teste: </p>
+
+#Imagem 1
+
+Após a execução do programa é mostrado na tela os top k elementos, sendo eles as k palavras mais frequentes nos arquivos. Segue abaixo os exemplos de saídas para cada um dos casos de testes: </p>
+
+#Imagem 2
+
+Como podemos observar nos exemplos mostrados acima, vemos que o heap está ordenado na forma de um heap mínimo, onde o nó pai é menor que os seus filhos direito e esquerdo, tendo o filho esquerdo na posição 2i e o filho direito na posição 2i+1, referente ao nó pai.
 
 ## Máquina de teste
 
