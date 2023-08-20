@@ -106,15 +106,102 @@ Para a impleeentação do heap, foi escolhido uma estrutura de heap mínimo devi
 
 ## Funções do C++ utilizadas
 
-```unordered_map```</p>
+### unordered_map</p>
+O _unordered_map_ é uma classe em C++ que implementa um contêiner associativo baseado em tabela de hash. Ele permite armazenar pares de chave-valor, onde cada chave é usada para identificar exclusivamente o valor correspondente. Em outras palavras, ele é uma coleção de elementos, onde cada elemento possui uma chave única e um valor associado.
 
-```unordered_set```</p>
+* <strong style="color:white">Organização Interna:</strong> </p>
+O _unordered_map_ utiliza uma tabela de hash para organizar seus elementos internamente. Uma tabela de hash é uma estrutura de dados que mapeia chaves para valores através de uma função de hash. Isso permite que os elementos sejam acessados de maneira eficiente em tempo constante, na média.
 
-```make_heap```</p>
+* <strong style="color:white">Hashing e Baldes:</strong> </p>
+Ao adicionar elementos ao _unordered_map_, o valor de chave é passado por uma função de hash. Essa função converte a chave em um valor numérico chamado hash code. O hash code é usado para determinar o "balde" onde o elemento será armazenado. Cada balde é uma parte da tabela de hash que contém um ou mais elementos. A ideia é que, se a função de hash for bem distribuída, os elementos serão distribuídos uniformemente pelos baldes.
 
-```push_heap```</p>
+* <strong style="color:white">Tratamento de Colisões:</strong></p>
+Como as chaves podem gerar o mesmo hash code (colisão), é necessário um mecanismo para resolver esse problema. O _unordered_map_ utiliza técnicas como listas ligadas ou árvores balanceadas dentro dos baldes para acomodar elementos com o mesmo hash code. Isso significa que vários elementos com chaves diferentes, mas que resultam no mesmo hash code, podem ser armazenados juntos e ainda serem acessados eficientemente.
 
-```pop_heap```</p>
+* <strong style="color:white">Acesso e Inserção:</strong></p>
+Quando você insere ou acessa um elemento no _unordered_map_, a classe calcula o hash code da chave usando a função de hash especificada e determina o balde correspondente. Em seguida, ele busca o balde para localizar o elemento, usando uma comparação das chaves. O acesso direto pelo operador [] também é suportado, permitindo que você obtenha o valor associado a uma chave específica de maneira conveniente.
+
+* <strong style="color:white">Complexidade de Tempo:</strong></p>
+A complexidade de tempo médio para acessar, inserir ou remover um elemento de um _unordered_map_ é O(1), considerando que a função de hash seja distribuída uniformemente. No entanto, em casos raros de colisões excessivas, o pior caso pode ser O(n), onde n é o número total de elementos.
+
+* <strong style="color:white">Considerações:</strong> </p>
+É importante notar que, embora o acesso seja rápido em média, a ordem dos elementos dentro do _unordered_map_ não é garantida. Se a ordem é relevante, o _unordered_map_ pode não ser a melhor escolha, e você pode preferir usar o std::map.
+
+* <strong style="color:white">Conclusão:</strong> </p>
+O unordered_map é uma ferramenta poderosa para armazenar e recuperar dados associados a chaves de maneira eficiente. Ele utiliza tabelas de hash para permitir acesso rápido aos elementos e lida com colisões usando técnicas apropriadas. Entender seu funcionamento interno ajuda a escolher a estrutura de dados certa para cada situação.
+
+### unordered_set</p>
+O unordered_set é uma classe em C++ que implementa um contêiner associativo baseado em tabela de hash. Ele permite armazenar elementos únicos, onde cada elemento é usado como uma chave de busca para recuperação rápida. Em outras palavras, ele é uma coleção de elementos únicos, sem repetição.
+
+* <strong style="color:white">Organização Interna:</strong> </p>
+O unordered_set utiliza uma tabela de hash para organizar seus elementos internamente. Assim como o unordered_map, uma tabela de hash é uma estrutura de dados que mapeia valores para posições na tabela através de uma função de hash. Isso permite que os elementos sejam acessados de maneira eficiente em tempo constante, na média.
+
+* <strong style="color:white">Hashing e Baldes:</strong> </p>
+Quando você insere elementos no unordered_set, o valor do elemento é passado por uma função de hash. Essa função converte o valor em um valor numérico chamado hash code. O hash code é usado para determinar o "balde" onde o elemento será armazenado. Cada balde é uma parte da tabela de hash que contém um ou mais elementos. A ideia é que, se a função de hash for bem distribuída, os elementos serão distribuídos uniformemente pelos baldes.
+
+* <strong style="color:white">Tratamento de Colisões:</strong> </p>
+Assim como no unordered_map, o unordered_set também lida com colisões, que ocorrem quando dois elementos geram o mesmo hash code. Ele utiliza técnicas como listas ligadas ou árvores balanceadas dentro dos baldes para acomodar elementos com o mesmo hash code.
+
+* <strong style="color:white">Acesso e Inserção:</strong> </p>
+Quando você insere ou acessa um elemento no unordered_set, a classe calcula o hash code do valor usando a função de hash especificada e determina o balde correspondente. Em seguida, ele busca o balde para localizar o elemento, usando uma comparação dos valores. Isso permite a recuperação rápida de elementos exclusivos.
+
+* <strong style="color:white">Complexidade de Tempo:</strong> </p>
+A complexidade de tempo médio para acessar, inserir ou remover um elemento de um unordered_set é O(1), considerando que a função de hash seja distribuída uniformemente. No entanto, em casos raros de colisões excessivas, o pior caso pode ser O(n), onde n é o número total de elementos.
+
+* <strong style="color:white">Considerações:</strong> </p>
+O unordered_set é uma ferramenta poderosa para armazenar e recuperar elementos exclusivos de maneira eficiente. No entanto, é importante observar que a ordem dos elementos dentro do unordered_set não é garantida. Se a ordem é relevante, o std::set pode ser uma escolha melhor.
+
+* <strong style="color:white">Conclusão:</strong> </p>
+O unordered_set é uma estrutura de dados eficiente para armazenar e gerenciar elementos únicos usando uma tabela de hash. Ele aproveita o poder da computação de hash para fornecer acesso rápido aos elementos e lida com colisões de maneira adequada. Compreender seu funcionamento interno ajuda a escolher a estrutura de dados certa para diferentes situações.
+
+### make_heap</p>
+A função make_heap faz parte da biblioteca de algoritmos em C++ e é usada para criar uma estrutura de heap a partir de uma sequência de elementos. Um heap é uma estrutura de dados especial em forma de árvore que mantém a propriedade do maior (ou menor) elemento estar na raiz. A função make_heap é frequentemente usada como parte do processo de construção de um heap.
+
+* <strong style="color:white">Organização Interna:</strong </p>
+Internamente, a função make_heap usa um processo chamado "heapify", que é uma técnica para transformar uma sequência de elementos em um heap. Esse processo reorganiza os elementos de modo que a propriedade do heap seja mantida. Em um heap máximo (max heap), o pai é sempre maior do que seus filhos. Em um heap mínimo (min heap), o pai é sempre menor do que seus filhos.
+
+* <strong style="color:white">Funcionamento da função make_heap:</strong </p>
+A função make_heap aceita dois argumentos: o primeiro é um iterador que aponta para o início da sequência e o segundo é um iterador que aponta para o final da sequência. A sequência deve ser um range de elementos que deseja-se transformar em um heap. </p>
+A função percorre a sequência da direita para a esquerda, começando de um ponto em que a propriedade do heap já está sendo mantida. Para cada elemento, ela faz um processo de "sift up" (ou "sift down" dependendo da implementação). Isso envolve mover o elemento para a posição correta no heap, de acordo com a propriedade do heap.
+
+* <strong style="color:white">Complexidade de Tempo:</strong </p>
+A complexidade de tempo da função make_heap é O(n), onde n é o número de elementos na sequência. Isso a torna uma operação bastante eficiente para criar um heap.
+
+* <strong style="color:white">Conclusão:</strong> </p>
+A função make_heap é uma ferramenta útil para criar um heap a partir de uma sequência de elementos. Ela usa um processo interno para reorganizar os elementos de forma a manter a propriedade do heap. Compreender seu funcionamento interno ajuda a usar essa função de maneira eficaz em algoritmos que requerem o uso de heaps.
+
+### push_heap</p>
+A função push_heap é uma parte da biblioteca de algoritmos em C++ e é usada para adicionar um novo elemento a um heap (árvore binária) mantendo a propriedade do heap. Essa função é comumente usada em conjunto com a função make_heap para inserir elementos em um heap e manter a estrutura correta.
+
+* <strong style="color:white">Organização Interna:</strong> </p>
+Internamente, a função push_heap realiza uma operação conhecida como "sift up" (ou "float up"). Essa operação é usada para adicionar um novo elemento ao final da sequência que representa o heap e, em seguida, "flutuar" esse elemento para a posição correta, mantendo a propriedade do heap.
+
+* <strong style="color:white">Funcionamento da função push_heap:</strong> </p>
+A função push_heap aceita dois argumentos: um iterador para o início da sequência e um iterador para o final da sequência, incluindo o novo elemento a ser adicionado. O novo elemento é inicialmente colocado no final da sequência. </p>
+Em seguida, a função começa a realizar a operação de "sift up". Ela compara o novo elemento com seu pai no heap. Se o novo elemento for maior (ou menor, dependendo do tipo de heap) do que o pai, os elementos são trocados. Esse processo continua até que o novo elemento alcance sua posição correta no heap.
+
+* <strong style="color:white">Complexidade de Tempo:</strong> </p>
+A complexidade de tempo da função push_heap é O(log n), onde n é o número de elementos na sequência que representa o heap. Isso ocorre porque o elemento é movido de uma posição no heap para uma posição mais alta, seguindo o caminho da árvore binária.
+
+* <strong style="color:white">Conclusão:</strong> </p>
+A função push_heap é uma ferramenta essencial para adicionar elementos a um heap e manter sua propriedade. Ela usa o processo de "sift up" para posicionar corretamente o novo elemento dentro do heap. Compreender seu funcionamento interno é fundamental para utilizar essa função efetivamente em algoritmos que envolvem heaps.
+
+### pop_heap</p>
+A função pop_heap faz parte da biblioteca de algoritmos em C++ e é usada para remover o elemento principal (raiz) de um heap (árvore binária), mantendo a propriedade do heap. Essa função é frequentemente usada em conjunto com a função make_heap para remover o maior (ou menor) elemento de um heap e manter a estrutura correta.
+
+* <strong style="color:white">Organização Interna:</strong> </p>
+Internamente, a função pop_heap realiza uma operação conhecida como "sift down" (ou "bubble down"). Essa operação é usada para remover o elemento principal (raiz) do heap e, em seguida, "afundar" o último elemento colocado no heap para a posição correta, mantendo a propriedade do heap.
+
+* <strong style="color:white">Funcionamento da função pop_heap:</strong> </p>
+A função pop_heap aceita dois argumentos: um iterador para o início da sequência e um iterador para o final da sequência. Ela assume que a sequência é um heap válido.</p>
+Primeiro, a função troca o elemento principal (raiz) do heap com o último elemento da sequência. Isso remove o elemento principal do heap e coloca o último elemento em seu lugar.</p>
+A seguir, a função inicia o processo de "sift down" com o novo elemento principal. Ela compara o novo elemento com seus filhos no heap. Se o elemento for menor (ou maior, dependendo do tipo de heap) do que qualquer um de seus filhos, os elementos são trocados. Esse processo continua até que o elemento alcance sua posição correta no heap.
+
+* <strong style="color:white">Complexidade de Tempo:</strong> </p>
+A complexidade de tempo da função pop_heap é O(log n), onde n é o número de elementos na sequência que representa o heap. Isso ocorre porque o elemento é movido de uma posição no heap para uma posição mais baixa, seguindo o caminho da árvore binária.
+
+* <strong style="color:white">Conclusão:</strong> </p>
+A função pop_heap é uma ferramenta importante para remover o elemento principal de um heap e manter a propriedade correta. Ela usa o processo de "sift down" para reorganizar os elementos após a remoção do elemento principal. Compreender seu funcionamento interno é fundamental para utilizar essa função efetivamente em algoritmos que envolvem heaps.
 
 ## Arquivos
 
