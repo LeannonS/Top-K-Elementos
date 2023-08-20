@@ -157,14 +157,14 @@ O unordered_set é uma estrutura de dados eficiente para armazenar e gerenciar e
 ### make_heap</p>
 A função make_heap faz parte da biblioteca de algoritmos em C++ e é usada para criar uma estrutura de heap a partir de uma sequência de elementos. Um heap é uma estrutura de dados especial em forma de árvore que mantém a propriedade do maior (ou menor) elemento estar na raiz. A função make_heap é frequentemente usada como parte do processo de construção de um heap.
 
-* <strong style="color:white">Organização Interna:</strong </p>
+* <strong style="color:white">Organização Interna:</strong> </p>
 Internamente, a função make_heap usa um processo chamado "heapify", que é uma técnica para transformar uma sequência de elementos em um heap. Esse processo reorganiza os elementos de modo que a propriedade do heap seja mantida. Em um heap máximo (max heap), o pai é sempre maior do que seus filhos. Em um heap mínimo (min heap), o pai é sempre menor do que seus filhos.
 
-* <strong style="color:white">Funcionamento da função make_heap:</strong </p>
+* <strong style="color:white">Funcionamento da função make_heap:</strong> </p>
 A função make_heap aceita dois argumentos: o primeiro é um iterador que aponta para o início da sequência e o segundo é um iterador que aponta para o final da sequência. A sequência deve ser um range de elementos que deseja-se transformar em um heap. </p>
 A função percorre a sequência da direita para a esquerda, começando de um ponto em que a propriedade do heap já está sendo mantida. Para cada elemento, ela faz um processo de "sift up" (ou "sift down" dependendo da implementação). Isso envolve mover o elemento para a posição correta no heap, de acordo com a propriedade do heap.
 
-* <strong style="color:white">Complexidade de Tempo:</strong </p>
+* <strong style="color:white">Complexidade de Tempo:</strong> </p>
 A complexidade de tempo da função make_heap é O(n), onde n é o número de elementos na sequência. Isso a torna uma operação bastante eficiente para criar um heap.
 
 * <strong style="color:white">Conclusão:</strong> </p>
