@@ -255,11 +255,19 @@ A classe Utils é uma forma eficiente de organizar essas funcionalidades auxilia
 
 Ao se compilar e iniciar a execução do programa, o algoritmo fornece uma mensagem na tela perguntando a quantidade de arquivos que o usuário deseja fazer a leitura. Foram realizados dois testes, o primeiro teste foi utilizado lendo apenas o arquivo _input1.data_. O segundo teste foi realizado utilizando dois arquivos sendo eles: _input1.data_ e _input.data_. A seguir segue o exemplo dos 2 arquivos de teste: </p>
 
-#Imagem 1
+![Entrada1](img/Entrada1.PNG)<br>
+Exemplo do arquivo de entrada 1!
+
+![Entrada2](img/Entrada2.PNG)<br>
+Exemplo do arquivo de entrada 2!
 
 Após a execução do programa é mostrado na tela os top k elementos, sendo eles as k palavras mais frequentes nos arquivos. Segue abaixo os exemplos de saídas para cada um dos casos de testes: </p>
 
-#Imagem 2
+![Saida1](img/Saida1.PNG)<br>
+Resultados após teste realizado com o arquivo de entrada 1!
+
+![Saida2](img/Saida2.PNG)<br>
+Resultados após teste realizado com o arquivo de entrada 1 e 2 simultaneamente!
 
 Como podemos observar nos exemplos mostrados acima, vemos que o heap está ordenado na forma de um heap mínimo, onde o nó pai é menor que os seus filhos direito e esquerdo, tendo o filho esquerdo na posição 2i e o filho direito na posição 2i+1, referente ao nó pai. Também podemos verificar que as palavras listadas na saída do programa, são as k palavras mais frequentes presentes nos textos.
 
@@ -320,6 +328,16 @@ Como podemos observar nos exemplos mostrados acima, vemos que o heap está orden
 </table>
 
 ## Conclusão
+
+A solução proposta para o problema dos "top k itens" exemplifica de forma clara e eficaz a aplicação das estruturas de hash e heap em um contexto prático. A busca pelos k elementos mais valiosos em uma coleção de dados é uma tarefa amplamente encontrada em análise de dados e processamento de informações. Através da combinação estratégica das estruturas de hash e heap, é possível atingir essa meta de maneira otimizada e eficiente.
+
+Este repositório demonstra a implementação de um algoritmo capaz de identificar os top k elementos mais frequentes em uma coleção de texto. A utilização de uma tabela de hash para calcular a frequência das palavras e um heap para manter a lista dos k elementos mais relevantes destaca a flexibilidade e poder dessas estruturas. Através desse processo, o algoritmo oferece uma solução com complexidade O(n log k), o que o torna escalável mesmo para grandes volumes de dados.
+
+A decisão de utilizar alocação dinâmica de memória para a leitura dos arquivos e a leitura direta de stopwords do arquivo foi baseada em uma análise criteriosa das vantagens e desvantagens de ambas as abordagens. O objetivo foi alcançar um equilíbrio entre eficiência e gerenciamento de recursos, considerando a natureza dos arquivos e o desempenho do algoritmo como um todo.
+
+O uso de uma estrutura de heap mínimo foi uma escolha estratégica para otimizar a remoção dos elementos com menor frequência. Essa abordagem contribui para a eficiência do algoritmo, uma vez que a operação de remoção da raiz em um heap mínimo é mais eficaz do que em um heap máximo, economizando tempo de processamento.
+
+Em resumo, a implementação apresentada oferece uma abordagem concreta para aplicar as estruturas de hash e heap em situações reais. Mediante essa solução, é viável extrair informações significativas de vastos conjuntos de dados de maneira ágil e otimizada. A aquisição de conhecimento ao longo dessa jornada amplia a capacidade dos desenvolvedores em selecionar e implementar as estruturas de dados mais adequadas para enfrentar uma variedade de desafios computacionais.
 
 ## Compilação e Execução
 
