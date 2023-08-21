@@ -269,7 +269,7 @@ Resultados após teste realizado com o arquivo de entrada 1!
 ![Saida2](img/Saida2.PNG)<br>
 Resultados após teste realizado com o arquivo de entrada 1 e 2 simultaneamente!
 
-Como podemos observar nos exemplos mostrados acima, vemos que o heap está ordenado na forma de um heap mínimo, onde o nó pai é menor que os seus filhos direito e esquerdo, tendo o filho esquerdo na posição 2i e o filho direito na posição 2i+1, referente ao nó pai. Também podemos verificar que as palavras listadas na saída do programa, são as k palavras mais frequentes presentes nos textos.
+Como podemos observar nos exemplos mostrados acima, podemos observar que o heap está ordenado na forma de um heap mínimo, onde o nó pai é menor que os seus filhos direito e esquerdo, tendo o filho esquerdo na posição 2i e o filho direito na posição 2i+1, referente ao nó pai. Também podemos verificar que as palavras listadas na saída do programa, são as k palavras mais frequentes presentes nos textos.
 
 ## Máquina de teste
 
