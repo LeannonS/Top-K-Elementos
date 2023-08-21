@@ -65,8 +65,10 @@ unordered_set<wstring> Utils::getStopWords(const locale loc)
 
 void Utils::printHeap(vector<Item> heap)
 {
+  wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+  
   for (auto i = 0u; i < heap.size(); i++)
   {
-     wcout << "Palavra: " << heap[i].getNome() << " --- " << "Frequência: "<< heap[i].getFrequencia() << endl;
+    cout << "Palavra: " << converter.to_bytes(heap[i].getNome()) << " --- " << "Frequência: "<< heap[i].getFrequencia() << endl;
   }
 }
