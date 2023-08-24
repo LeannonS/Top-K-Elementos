@@ -159,7 +159,13 @@ O unordered_set é uma estrutura de dados eficiente para armazenar e gerenciar e
 A função make_heap faz parte da biblioteca de algoritmos em C++ e é usada para criar uma estrutura de heap a partir de uma sequência de elementos. Um heap é uma estrutura de dados especial em forma de árvore que mantém a propriedade do maior (ou menor) elemento estar na raiz. A função make_heap é frequentemente usada como parte do processo de construção de um heap.
 
 * <strong style="color:white">Organização Interna:</strong> </p>
-Internamente, a função make_heap usa um processo chamado "heapify", que é uma técnica para transformar uma sequência de elementos em um heap. Esse processo reorganiza os elementos de modo que a propriedade do heap seja mantida. Em um heap máximo (max heap), o pai é sempre maior do que seus filhos. Em um heap mínimo (min heap), o pai é sempre menor do que seus filhos.
+Internamente, a função make_heap usa um processo chamado "heapify", que é uma técnica para transformar uma sequência de elementos em um heap. Esse processo reorganiza os elementos de modo que a propriedade do heap seja mantida. Em um heap máximo (max heap), o pai é sempre maior do que seus filhos. Em um heap mínimo (min heap), o pai é sempre menor do que seus filhos.</p>
+O make_heap executa as trocas e ordenação da seguinte forma:</p>
+1- O algoritmo começa do último nó pai na árvore (o pai do último elemento da sequência) e prossegue até o primeiro elemento.</p>
+2- Para cada nó pai, o algoritmo compara o valor do pai com os valores de seus filhos.</p>
+3- Se o valor de um filho for maior do que o valor do pai, ocorre uma troca entre o pai e o filho de maior valor.</p>
+4- Após a troca, o algoritmo continua verificando o nó que foi trocado (agora no lugar do pai original) e repetindo o processo até que o elemento chegue à posição apropriada no heap.
+
 
 * <strong style="color:white">Funcionamento da função make_heap:</strong> </p>
 A função make_heap aceita dois argumentos: o primeiro é um iterador que aponta para o início da sequência e o segundo é um iterador que aponta para o final da sequência. A sequência deve ser um range de elementos que deseja-se transformar em um heap. </p>
