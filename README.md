@@ -110,7 +110,8 @@ Para a impleeentação do heap, foi escolhido uma estrutura de heap mínimo devi
 O _unordered_map_ é uma classe em C++ que implementa um contêiner associativo baseado em tabela de hash. Ele permite armazenar pares de chave-valor, onde cada chave é usada para identificar exclusivamente o valor correspondente. Em outras palavras, ele é uma coleção de elementos, onde cada elemento possui uma chave única e um valor associado.
 
 * <strong style="color:white">Organização Interna:</strong> </p>
-O _unordered_map_ utiliza uma tabela de hash para organizar seus elementos internamente. Uma tabela de hash é uma estrutura de dados que mapeia chaves para valores através de uma função de hash. Isso permite que os elementos sejam acessados de maneira eficiente em tempo constante, na média.
+O _unordered_map_ utiliza uma tabela de hash para organizar seus elementos internamente. Uma tabela de hash é uma estrutura de dados que mapeia chaves para valores através de uma função de hash. Isso permite que os elementos sejam acessados de maneira eficiente em tempo constante, na média.</p>
+A especificação exata do hash code usado pelo unordered_map em C++ pode variar entre as implementações da linguagem e das bibliotecas padrão. Não há um hash code padrão único que se aplique a todas as situações, uma vez que diferentes implementações podem usar diferentes funções de hash.
 
 * <strong style="color:white">Hashing e Baldes:</strong> </p>
 Ao adicionar elementos ao _unordered_map_, o valor de chave é passado por uma função de hash. Essa função converte a chave em um valor numérico chamado hash code. O hash code é usado para determinar o "balde" onde o elemento será armazenado. Cada balde é uma parte da tabela de hash que contém um ou mais elementos. A ideia é que, se a função de hash for bem distribuída, os elementos serão distribuídos uniformemente pelos baldes.
